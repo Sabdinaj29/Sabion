@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabion Hajdinaj — Brand Marketing</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--white:#f5f0e8;--cream:#ede8dc;--red:#d4351c;--gold:#c9a84c;--grey:#4a4a4a;--lg:#9a9a9a}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
+.cursor{width:10px;height:10px;background:var(--red);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s ease}
+.cring{width:36px;height:36px;border:1px solid rgba(212,53,28,.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 60px}
+nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.97),transparent);pointer-events:none}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.15em;color:var(--white);text-decoration:none;position:relative}
+.nav-links{display:flex;gap:28px;list-style:none;position:relative}
+.nav-links a{color:var(--lg);text-decoration:none;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--white)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:0 60px 80px;position:relative;z-index:2}
+.hero-tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:24px;opacity:0;animation:fadeUp .8s .2s forwards}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,9vw,130px);line-height:.9;letter-spacing:.02em;color:var(--white);opacity:0;animation:fadeUp .8s .4s forwards}
+.hero-name span{color:var(--red);display:block}
+.hero-desc{margin-top:32px;font-size:15px;line-height:1.7;color:var(--lg);max-width:380px;opacity:0;animation:fadeUp .8s .6s forwards}
+.hero-cta{margin-top:48px;display:flex;gap:20px;align-items:center;opacity:0;animation:fadeUp .8s .8s forwards}
+.btn-p{background:var(--red);color:var(--white);padding:14px 32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s;font-family:'DM Sans',sans-serif;font-weight:500}
+.btn-p:hover{background:var(--white);color:var(--black)}
+.btn-s{color:var(--lg);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--grey);padding-bottom:2px;transition:all .3s}
+.btn-s:hover{color:var(--white);border-color:var(--white)}
+.hero-right{position:relative;overflow:hidden}
+.hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(212,53,28,.15) 0%,transparent 60%);z-index:1}
+.hbg{position:absolute;font-family:'Bebas Neue',sans-serif;font-size:320px;color:rgba(255,255,255,.03);right:-40px;top:50%;transform:translateY(-50%);letter-spacing:-.05em;line-height:1;user-select:none;z-index:0}
+.hero-stats{position:absolute;bottom:80px;right:60px;display:flex;flex-direction:column;gap:40px;z-index:2;opacity:0;animation:fadeUp .8s 1s forwards}
+.stat{text-align:right;border-right:2px solid var(--red);padding-right:20px}
+.snum{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--white);line-height:1}
+.slbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--lg);margin-top:4px}
+.hline{position:absolute;top:0;bottom:0;left:0;width:1px;background:linear-gradient(to bottom,transparent,var(--grey) 30%,var(--grey) 70%,transparent);z-index:2}
+.scroll-ind{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp .8s 1.2s forwards;z-index:10}
+.scroll-ind span{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--lg)}
+.sline{width:1px;height:60px;background:linear-gradient(to bottom,var(--red),transparent);animation:spulse 2s infinite}
+.mq{overflow:hidden;background:var(--red);padding:16px 0}
+.mq-track{display:flex;white-space:nowrap;animation:marquee 22s linear infinite}
+.mq-item{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.15em;color:var(--white);padding:0 40px;display:flex;align-items:center;gap:40px}
+.mq-item::after{content:'✦';font-size:12px;opacity:.6}
+.slabel{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.stitle{font-family:'DM Serif Display',serif;font-size:clamp(40px,5vw,64px);line-height:1.1;color:var(--white);margin-bottom:60px}
+.stitle em{font-style:italic;color:var(--gold)}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.wi{position:relative;overflow:hidden;aspect-ratio:4/3;background:#1a1a1a;cursor:none}
+.wi:first-child{grid-column:span 2;aspect-ratio:16/7}
+.wi-content{position:absolute;inset:0;padding:40px;display:flex;flex-direction:column;justify-content:flex-end;z-index:2;transition:background .4s}
+.wi:hover .wi-content{background:rgba(0,0,0,.25)}
+.wi-tag{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:12px;opacity:0;transform:translateY(10px);transition:all .4s .1s}
+.wi:hover .wi-tag{opacity:1;transform:translateY(0)}
+.wi-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3vw,48px);letter-spacing:.03em;color:var(--white);line-height:1;transform:translateY(20px);transition:transform .4s}
+.wi:hover .wi-title{transform:translateY(0)}
+.wi-meta{font-size:12px;color:var(--lg);margin-top:8px;opacity:0;transform:translateY(10px);transition:all .4s .15s}
+.wi:hover .wi-meta{opacity:1;transform:translateY(0)}
+.wi-arrow{position:absolute;top:40px;right:40px;width:48px;height:48px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s;font-size:18px}
+.wi:hover .wi-arrow{opacity:1}
+/* VIDEO */
+.vbox{position:relative;background:#111;overflow:hidden;border:1px solid #1e1e1e}
+.vbox iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
+.vbox video{width:100%;aspect-ratio:16/9;display:block;background:#000}
+.vph{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#0d0d0d;border:1px dashed #252525;cursor:pointer;transition:all .3s;position:relative;padding:20px}
+.vph:hover{border-color:var(--red)}
+.vph input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.vpi{font-size:32px;opacity:.25}
+.vpl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--lg)}
+.vps{font-size:11px;color:var(--grey)}
+.vurl{display:flex;gap:0;margin-top:2px}
+.vurl input{flex:1;background:#0d0d0d;border:1px solid #252525;border-right:none;color:var(--white);padding:10px 14px;font-size:12px;font-family:'DM Sans',sans-serif;outline:none}
+.vurl input::placeholder{color:#444}
+.vurl input:focus{border-color:var(--red)}
+.vurl button{background:var(--red);color:var(--white);border:none;padding:10px 18px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .3s;white-space:nowrap}
+.vurl button:hover{background:#b82e18}
+/* UCL VIDEO */
+.ucl-sec{background:#0d0d0d;padding:120px 60px}
+.vfeat{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px}
+.vfeat:last-child{margin-bottom:0}
+.vfeat.rev{direction:rtl}
+.vfeat.rev>*{direction:ltr}
+.vinfo{display:flex;flex-direction:column;gap:20px}
+.vinfo-tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--red)}
+.vinfo-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,3vw,44px);line-height:1.1;color:var(--white)}
+.vinfo-title em{font-style:italic;color:var(--gold)}
+.vinfo-desc{font-size:15px;line-height:1.7;color:var(--lg)}
+.vstats{display:flex;gap:32px;padding-top:20px;border-top:1px solid #1e1e1e;flex-wrap:wrap}
+.vsn{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--white);line-height:1}
+.vsl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--lg);margin-top:4px}
+/* LEGENDS */
+.leg-sec{background:#0a0a0a;padding:120px 60px}
+.leg-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.leg-card{background:#111}
+.leg-head{padding:28px 28px 16px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center}
+.badge{font-size:9px;letter-spacing:.25em;text-transform:uppercase;background:var(--red);color:var(--white);padding:5px 12px;display:inline-block}
+.badge.up{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.leg-title{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.03em;color:var(--white);line-height:1;padding:20px 28px 6px}
+.leg-sub{font-size:13px;color:var(--lg);padding:0 28px 20px;line-height:1.6}
+.leg-video{padding:0 28px 28px}
+/* PHOTO VIDEO */
+.pv-sec{background:var(--cream);padding:120px 60px}
+.pv-sec .stitle{color:var(--black)}
+.pv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pvc{background:var(--black);overflow:hidden}
+.pvc .vph{background:#0d0d0d;border-color:#252525}
+.pv-info{padding:18px 20px 20px}
+.pv-series{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.pv-title{font-family:'DM Serif Display',serif;font-size:20px;color:var(--white);margin-bottom:6px}
+.pv-desc{font-size:12px;line-height:1.6;color:var(--lg)}
+/* ABOUT */
+.about-sec{background:var(--cream);padding:120px 60px}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.at p{font-size:17px;line-height:1.8;color:#333;margin-bottom:20px}
+.at p strong{color:var(--black);font-weight:500}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.sk{padding:8px 18px;border:1px solid #ccc;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);transition:all .3s}
+.sk:hover{background:var(--black);color:var(--white);border-color:var(--black)}
+.ar{display:flex;flex-direction:column;gap:32px}
+.asr{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:24px;border-bottom:1px solid #ddd}
+.asr:last-child{border-bottom:none}
+.asn{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--black);line-height:1}
+.asd{font-size:13px;color:var(--grey);max-width:200px;text-align:right;line-height:1.5}
+.lang-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
+.li{background:#111;padding:40px 24px;text-align:center;transition:background .3s}
+.li:hover{background:var(--red)}
+.lf{font-size:36px;margin-bottom:16px}
+.ln{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.1em;color:var(--white);margin-bottom:8px}
+.ll{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--lg)}
+.li:hover .ll{color:rgba(255,255,255,.7)}
+.contact-sec{background:var(--red);text-align:center;padding:120px 60px}
+.ct{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,140px);color:var(--white);line-height:.9;margin-bottom:48px;letter-spacing:.02em}
+.cl-wrap{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.cl{color:var(--white);text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:4px;transition:border-color .3s}
+.cl:hover{border-color:var(--white)}
+footer{background:var(--black);padding:40px 60px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #1a1a1a}
+footer span{font-size:11px;letter-spacing:.15em;color:var(--grey)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes spulse{0%,100%{opacity:.4}50%{opacity:1}}
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media(max-width:900px){
+nav{padding:24px}
+.nav-links{gap:14px}
+.nav-links a{font-size:10px}
+.hero{grid-template-columns:1fr}
+.hero-right{display:none}
+.hero-left{padding:120px 24px 80px}
+.ucl-sec,.leg-sec,.pv-sec,.about-sec{padding:80px 24px}
+.vfeat,.ag{grid-template-columns:1fr;gap:40px}
+.vfeat.rev{direction:ltr}
+.leg-grid,.pv-grid{grid-template-columns:1fr}
+.work-grid{grid-template-columns:1fr}
+.wi:first-child{grid-column:span 1}
+.lang-grid{grid-template-columns:repeat(3,1fr)}
+footer{flex-direction:column;gap:16px;text-align:center}
+.cl-wrap{flex-direction:column;align-items:center}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cur"></div>
+<div class="cring" id="crng"></div>
+
+<nav>
+  <a href="#" class="nav-logo">SH</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#ucl">UCL Campaign</a></li>
+    <li><a href="#legends">Legends</a></li>
+    <li><a href="#photography">Photography</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-tag">Brand Marketing · Cross-Cultural Strategy</p>
+    <h1 class="hero-name">Sabion<br><span>Hajdinaj</span></h1>
+    <p class="hero-desc">MSc International Marketing, King's College London. Specialist in multi-market campaign management, KOL strategy, and cross-cultural brand storytelling across Europe and Asia.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn-p">View Work</a>
+      <a href="#contact" class="btn-s">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hbg">SH</div>
+    <div class="hline"></div>
+    <div class="hero-stats">
+      <div class="stat"><div class="snum">21.9M+</div><div class="slbl">Campaign Impressions</div></div>
+      <div class="stat"><div class="snum">117</div><div class="slbl">KOL Activations</div></div>
+      <div class="stat"><div class="snum">12</div><div class="slbl">European Markets</div></div>
+      <div class="stat"><div class="snum">5</div><div class="slbl">Languages</div></div>
+    </div>
+  </div>
+  <div class="scroll-ind"><span>Scroll</span><div class="sline"></div></div>
+</section>
+
+<div class="mq">
+  <div class="mq-track">
+    <div class="mq-item">UEFA Champions League</div><div class="mq-item">JoyBuy · JD.com</div><div class="mq-item">Fortune Global 500</div><div class="mq-item">KCL Distinction</div><div class="mq-item">126 Fixtures</div><div class="mq-item">Budapest Final</div><div class="mq-item">Cross-Cultural Strategy</div>
+    <div class="mq-item">UEFA Champions League</div><div class="mq-item">JoyBuy · JD.com</div><div class="mq-item">Fortune Global 500</div><div class="mq-item">KCL Distinction</div><div class="mq-item">126 Fixtures</div><div class="mq-item">Budapest Final</div><div class="mq-item">Cross-Cultural Strategy</div>
+  </div>
+</div>
+
+<section id="work" style="padding:120px 0;background:#0a0a0a">
+  <div style="padding:0 60px 60px">
+    <p class="slabel reveal">Selected Work</p>
+    <h2 class="stitle reveal d1">Campaigns that <em>move</em><br>markets.</h2>
+  </div>
+  <div class="work-grid">
+    <div class="wi reveal" style="background:radial-gradient(ellipse at 30% 50%,rgba(212,53,28,.3) 0%,transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(201,168,76,.2) 0%,transparent 50%),#111">
+      <div class="wi-content"><div class="wi-tag">Brand Marketing · 2024–2025</div><div class="wi-title">UEFA Champions League — JoyBuy Campaign</div><div class="wi-meta">21.9M+ impressions · 4 markets · MD1 to Budapest Final · Fortune Global 500</div></div>
+      <div class="wi-arrow">↗</div>
+    </div>
+    <div class="wi reveal d1" style="background:radial-gradient(ellipse at 20% 80%,rgba(212,53,28,.2) 0%,transparent 50%),#111">
+      <div class="wi-content"><div class="wi-tag">Influencer Strategy · 2024–2025</div><div class="wi-title">KOL Activation — 12 Markets</div><div class="wi-meta">117 activations · 7M organic impressions · Zero media spend</div></div>
+      <div class="wi-arrow">↗</div>
+    </div>
+    <div class="wi reveal d2" style="background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,.2) 0%,transparent 60%),#0d0d0d">
+      <div class="wi-content"><div class="wi-tag">Legend Activation · 2025</div><div class="wi-title">Ray Parlour × 433 Instagram</div><div class="wi-meta">Live UCL Quarterfinals takeover · Scripting, coordination & approvals</div></div>
+      <div class="wi-arrow">↗</div>
+    </div>
+    <div class="wi reveal d1" style="background:radial-gradient(ellipse at 80% 20%,rgba(201,168,76,.15) 0%,transparent 50%),#0d0d0d">
+      <div class="wi-content"><div class="wi-tag">Consumer Research · 2024</div><div class="wi-title">KYL Foundation — Market Expansion</div><div class="wi-meta">198 participants · JASP analysis · International growth strategy</div></div>
+      <div class="wi-arrow">↗</div>
+    </div>
+  </div>
+</section>
+
+<!-- UCL CAMPAIGN VIDEO -->
+<section id="ucl" class="ucl-sec">
+  <p class="slabel reveal">UCL Campaign Footage</p>
+  <h2 class="stitle reveal d1">The campaign.<br><em>In full.</em></h2>
+
+  <div class="vfeat reveal">
+    <div>
+      <div class="vbox" id="b1">
+        <div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b1')"><div class="vpi">▶</div><div class="vpl">Campaign footage</div><div class="vps">Click to upload a video file</div></div>
+      </div>
+      <div class="vurl"><input type="text" placeholder="Paste YouTube or Vimeo URL..." id="u1"><button onclick="eu('u1','b1')">Embed ↗</button></div>
+    </div>
+    <div class="vinfo">
+      <div class="vinfo-tag">UCL Campaign · JoyBuy × UEFA</div>
+      <h3 class="vinfo-title">Matchday 1 to the <em>Budapest Final</em></h3>
+      <p class="vinfo-desc">Sole marketing hire managing JoyBuy's UEFA Champions League sponsorship end-to-end — from campaign launch through to the Final across UK, France, Germany and the Netherlands.</p>
+      <div class="vstats">
+        <div><div class="vsn">21.9M+</div><div class="vsl">Total Impressions</div></div>
+        <div><div class="vsn">126</div><div class="vsl">Fixtures</div></div>
+        <div><div class="vsn">£1M+</div><div class="vsl">Tickets Managed</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vfeat rev reveal">
+    <div>
+      <div class="vbox" id="b2">
+        <div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b2')"><div class="vpi">▶</div><div class="vpl">Offline activation footage</div><div class="vps">Arsenal · Chelsea · Tottenham · Ajax</div></div>
+      </div>
+      <div class="vurl"><input type="text" placeholder="Paste YouTube or Vimeo URL..." id="u2"><button onclick="eu('u2','b2')">Embed ↗</button></div>
+    </div>
+    <div class="vinfo">
+      <div class="vinfo-tag">Offline Activations · UK, DE, NL</div>
+      <h3 class="vinfo-title">10 activations.<br><em>539K footfall.</em></h3>
+      <p class="vinfo-desc">Coordinated 10 UEFA offline activations across UK, Germany and Netherlands — including Arsenal, Chelsea, Tottenham and Ajax — generating 8,600 sign-ups and 539K footfall exposure.</p>
+      <div class="vstats">
+        <div><div class="vsn">10</div><div class="vsl">Events</div></div>
+        <div><div class="vsn">8,600</div><div class="vsl">Sign-ups</div></div>
+        <div><div class="vsn">539K</div><div class="vsl">Footfall</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGEND ACTIVATIONS -->
+<section id="legends" class="leg-sec">
+  <p class="slabel reveal">Legend Activations</p>
+  <h2 class="stitle reveal d1">Football icons.<br><em>Real moments.</em></h2>
+  <div class="leg-grid">
+    <div class="leg-card reveal">
+      <div class="leg-head"><span class="badge">Completed · UCL QF 2025</span><span style="font-size:11px;color:var(--lg);letter-spacing:.1em">433 × Instagram</span></div>
+      <div class="leg-title">Ray Parlour</div>
+      <div class="leg-sub">Live Instagram takeover at the UCL Quarterfinals with Arsenal legend Ray Parlour. Scripted, coordinated and managed end-to-end — giveaway, content approvals, staff coordination.</div>
+      <div class="leg-video">
+        <div class="vbox" id="b3"><div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b3')"><div class="vpi">▶</div><div class="vpl">Add footage</div><div class="vps">Upload or embed below</div></div></div>
+        <div class="vurl"><input type="text" placeholder="YouTube / Vimeo / Instagram URL..." id="u3"><button onclick="eu('u3','b3')">Embed ↗</button></div>
+      </div>
+    </div>
+    <div class="leg-card reveal d1">
+      <div class="leg-head"><span class="badge up">Coming Soon · 2025</span><span style="font-size:11px;color:var(--lg);letter-spacing:.1em">Independent Production</span></div>
+      <div class="leg-title">Nacho Monreal</div>
+      <div class="leg-sub">Independently produced activation with former Arsenal & Spain international — scripting, presenter sourcing, videographer, ticket coordination. Delivered at zero cost.</div>
+      <div class="leg-video">
+        <div class="vbox" id="b4"><div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b4')"><div class="vpi">▶</div><div class="vpl">Add footage when ready</div><div class="vps">Upload once complete</div></div></div>
+        <div class="vurl"><input type="text" placeholder="YouTube / Vimeo / Instagram URL..." id="u4"><button onclick="eu('u4','b4')">Embed ↗</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOGRAPHY + VIDEO WALKTHROUGHS -->
+<section id="photography" class="pv-sec">
+  <p class="slabel reveal">Creative Work</p>
+  <h2 class="stitle reveal d1">Photography as<br><em>cultural dialogue.</em></h2>
+  <div class="pv-grid">
+    <div class="pvc reveal">
+      <div class="vbox" id="b5"><div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b5')"><div class="vpi">🏔</div><div class="vpl">Project Liria walkthrough</div><div class="vps">Upload or embed</div></div></div>
+      <div class="vurl"><input type="text" placeholder="YouTube / Vimeo URL..." id="u5"><button onclick="eu('u5','b5')">Embed ↗</button></div>
+      <div class="pv-info"><div class="pv-series">Project Liria — 7 Parts</div><div class="pv-title">Freedom / Liri</div><div class="pv-desc">Albanian landscapes from the Accursed Mountains to the Ionian coast — challenging cultural clichés.</div></div>
+    </div>
+    <div class="pvc reveal d1">
+      <div class="vbox" id="b6"><div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b6')"><div class="vpi">🀄</div><div class="vpl">Chengyu Series walkthrough</div><div class="vps">Upload or embed</div></div></div>
+      <div class="vurl"><input type="text" placeholder="YouTube / Vimeo URL..." id="u6"><button onclick="eu('u6','b6')">Embed ↗</button></div>
+      <div class="pv-info"><div class="pv-series">Chengyu Visual Series — 6 Parts</div><div class="pv-title">語言與遺產</div><div class="pv-desc">Ancient Chinese idioms paired with contemporary Taiwanese spaces — language, heritage, visual identity.</div></div>
+    </div>
+    <div class="pvc reveal d2">
+      <div class="vbox" id="b7"><div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b7')"><div class="vpi">🎬</div><div class="vpl">Behind the lens</div><div class="vps">BTS / process footage</div></div></div>
+      <div class="vurl"><input type="text" placeholder="YouTube / Vimeo URL..." id="u7"><button onclick="eu('u7','b7')">Embed ↗</button></div>
+      <div class="pv-info"><div class="pv-series">Behind The Lens</div><div class="pv-title">Process & Story</div><div class="pv-desc">The making of — cross-cultural photography as brand storytelling and cultural research.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-sec">
+  <p class="slabel reveal">About</p>
+  <div class="ag">
+    <div class="at reveal">
+      <h2 class="stitle" style="color:var(--black);margin-bottom:32px">Marketing at the<br><em>intersection</em> of cultures.</h2>
+      <p>I'm a brand marketer with an MSc (Distinction) from King's College London and a First Class BA in Spanish & Chinese Studies from the University of Nottingham. I speak five languages and have lived and studied across Europe, Taiwan and Spain.</p>
+      <p>Most recently I was the <strong>sole marketing hire</strong> for JoyBuy's UEFA Champions League sponsorship activation — managing the full campaign from Matchday 1 through to the Budapest Final across UK, France, Germany and the Netherlands.</p>
+      <p>My background in cross-cultural research and language gives me a different lens on brand strategy — particularly in Asian and multilingual European markets.</p>
+      <div class="skills">
+        <span class="sk">Multi-Market Campaigns</span><span class="sk">KOL Strategy</span><span class="sk">Creative Production</span><span class="sk">Consumer Research</span><span class="sk">Brand Storytelling</span><span class="sk">Stakeholder Management</span><span class="sk">Cross-Cultural Strategy</span><span class="sk">Content Creation</span>
+      </div>
+    </div>
+    <div class="ar reveal d2">
+      <div class="asr"><div class="asn">21.9M+</div><div class="asd">Total campaign impressions on the 433 platform</div></div>
+      <div class="asr"><div class="asn">£1M+</div><div class="asd">Category 1 & hospitality UEFA tickets managed solo</div></div>
+      <div class="asr"><div class="asn">126</div><div class="asd">Fixtures covered across 4 European countries</div></div>
+      <div class="asr"><div class="asn">75%</div><div class="asd">Dissertation score, KCL — Chinese Gen Z brand behaviour</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:80px 0;background:var(--black)">
+  <div style="padding:0 60px 60px">
+    <p class="slabel reveal">Languages</p>
+    <h2 class="stitle reveal d1">Five languages.<br><em>One voice.</em></h2>
+  </div>
+  <div class="lang-grid">
+    <div class="li reveal"><div class="lf">🇬🇧</div><div class="ln">English</div><div class="ll">Native</div></div>
+    <div class="li reveal d1"><div class="lf">🇦🇱</div><div class="ln">Albanian</div><div class="ll">Native</div></div>
+    <div class="li reveal d2"><div class="lf">🇪🇸</div><div class="ln">Spanish</div><div class="ll">Professional</div></div>
+    <div class="li reveal d3"><div class="lf">🇮🇹</div><div class="ln">Italian</div><div class="ll">Working</div></div>
+    <div class="li reveal d3"><div class="lf">🇨🇳</div><div class="ln">Mandarin</div><div class="ll">Elementary</div></div>
+  </div>
+</section>
+
+<section id="contact" class="contact-sec">
+  <p class="slabel">Get In Touch</p>
+  <h2 class="ct">Let's<br>Work.</h2>
+  <div class="cl-wrap">
+    <a href="mailto:29dinajsabion@gmail.com" class="cl">29dinajsabion@gmail.com</a>
+    <a href="https://linkedin.com/in/sabion-negocios" class="cl" target="_blank">LinkedIn</a>
+    <a href="tel:07988510547" class="cl">07988 510547</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Sabion Hajdinaj</span>
+  <span>Brand Marketing · London, UK</span>
+  <span>KCL MSc · University of Nottingham</span>
+</footer>
+
+<script>
+const cur=document.getElementById('cur'),crng=document.getElementById('crng');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;crng.style.left=rx+'px';crng.style.top=ry+'px';requestAnimationFrame(a)})();
+document.querySelectorAll('a,button,.wi,.li').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';crng.style.borderColor='rgba(212,53,28,.8)'});
+  el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';crng.style.borderColor='rgba(212,53,28,.5)'});
+});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function lf(input,id){
+  const f=input.files[0];if(!f)return;
+  const url=URL.createObjectURL(f);
+  document.getElementById(id).innerHTML=`<video controls><source src="${url}" type="${f.type}"></video>`;
+}
+function ge(url){
+  url=url.trim();
+  const yt=url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/);
+  if(yt)return`https://www.youtube.com/embed/${yt[1]}?rel=0`;
+  const vm=url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if(vm)return`https://player.vimeo.com/video/${vm[1]}`;
+  if(url.startsWith('http'))return url;
+  return null;
+}
+function eu(inputId,boxId){
+  const url=document.getElementById(inputId)?.value||'';
+  if(!url)return;
+  if(url.includes('instagram.com')){window.open(url,'_blank');return}
+  const e=ge(url);
+  if(!e){alert('Paste a YouTube or Vimeo link and try again.');return}
+  document.getElementById(boxId).innerHTML=`<iframe src="${e}" allowfullscreen allow="autoplay;encrypted-media"></iframe>`;
+}
+document.querySelectorAll('.vurl input').forEach(inp=>{
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter')inp.nextElementSibling?.click()});
+});
+</script>
+</body>
+</html>
