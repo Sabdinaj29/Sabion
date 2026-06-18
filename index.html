@@ -3,414 +3,584 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sabion Hajdinaj — Brand Marketing</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<title>RLA Digital — B2B Growth Marketing That Books Sales Calls</title>
+<meta name="description" content="RLA Digital plans, runs and books your B2B pipeline — paid ads, appointment setting, automation and sales support managed end-to-end since 2022.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0a0a0a;--white:#f5f0e8;--cream:#ede8dc;--red:#d4351c;--gold:#c9a84c;--grey:#4a4a4a;--lg:#9a9a9a}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
-.cursor{width:10px;height:10px;background:var(--red);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s ease}
-.cring{width:36px;height:36px;border:1px solid rgba(212,53,28,.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 60px}
-nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.97),transparent);pointer-events:none}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.15em;color:var(--white);text-decoration:none;position:relative}
-.nav-links{display:flex;gap:28px;list-style:none;position:relative}
-.nav-links a{color:var(--lg);text-decoration:none;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:color .3s}
-.nav-links a:hover{color:var(--white)}
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
-.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:0 60px 80px;position:relative;z-index:2}
-.hero-tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:24px;opacity:0;animation:fadeUp .8s .2s forwards}
-.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,9vw,130px);line-height:.9;letter-spacing:.02em;color:var(--white);opacity:0;animation:fadeUp .8s .4s forwards}
-.hero-name span{color:var(--red);display:block}
-.hero-desc{margin-top:32px;font-size:15px;line-height:1.7;color:var(--lg);max-width:380px;opacity:0;animation:fadeUp .8s .6s forwards}
-.hero-cta{margin-top:48px;display:flex;gap:20px;align-items:center;opacity:0;animation:fadeUp .8s .8s forwards}
-.btn-p{background:var(--red);color:var(--white);padding:14px 32px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .3s;font-family:'DM Sans',sans-serif;font-weight:500}
-.btn-p:hover{background:var(--white);color:var(--black)}
-.btn-s{color:var(--lg);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--grey);padding-bottom:2px;transition:all .3s}
-.btn-s:hover{color:var(--white);border-color:var(--white)}
-.hero-right{position:relative;overflow:hidden}
-.hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(212,53,28,.15) 0%,transparent 60%);z-index:1}
-.hbg{position:absolute;font-family:'Bebas Neue',sans-serif;font-size:320px;color:rgba(255,255,255,.03);right:-40px;top:50%;transform:translateY(-50%);letter-spacing:-.05em;line-height:1;user-select:none;z-index:0}
-.hero-stats{position:absolute;bottom:80px;right:60px;display:flex;flex-direction:column;gap:40px;z-index:2;opacity:0;animation:fadeUp .8s 1s forwards}
-.stat{text-align:right;border-right:2px solid var(--red);padding-right:20px}
-.snum{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--white);line-height:1}
-.slbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--lg);margin-top:4px}
-.hline{position:absolute;top:0;bottom:0;left:0;width:1px;background:linear-gradient(to bottom,transparent,var(--grey) 30%,var(--grey) 70%,transparent);z-index:2}
-.scroll-ind{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp .8s 1.2s forwards;z-index:10}
-.scroll-ind span{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--lg)}
-.sline{width:1px;height:60px;background:linear-gradient(to bottom,var(--red),transparent);animation:spulse 2s infinite}
-.mq{overflow:hidden;background:var(--red);padding:16px 0}
-.mq-track{display:flex;white-space:nowrap;animation:marquee 22s linear infinite}
-.mq-item{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.15em;color:var(--white);padding:0 40px;display:flex;align-items:center;gap:40px}
-.mq-item::after{content:'✦';font-size:12px;opacity:.6}
-.slabel{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
-.stitle{font-family:'DM Serif Display',serif;font-size:clamp(40px,5vw,64px);line-height:1.1;color:var(--white);margin-bottom:60px}
-.stitle em{font-style:italic;color:var(--gold)}
-.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
-.wi{position:relative;overflow:hidden;aspect-ratio:4/3;background:#1a1a1a;cursor:none}
-.wi:first-child{grid-column:span 2;aspect-ratio:16/7}
-.wi-content{position:absolute;inset:0;padding:40px;display:flex;flex-direction:column;justify-content:flex-end;z-index:2;transition:background .4s}
-.wi:hover .wi-content{background:rgba(0,0,0,.25)}
-.wi-tag{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:12px;opacity:0;transform:translateY(10px);transition:all .4s .1s}
-.wi:hover .wi-tag{opacity:1;transform:translateY(0)}
-.wi-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3vw,48px);letter-spacing:.03em;color:var(--white);line-height:1;transform:translateY(20px);transition:transform .4s}
-.wi:hover .wi-title{transform:translateY(0)}
-.wi-meta{font-size:12px;color:var(--lg);margin-top:8px;opacity:0;transform:translateY(10px);transition:all .4s .15s}
-.wi:hover .wi-meta{opacity:1;transform:translateY(0)}
-.wi-arrow{position:absolute;top:40px;right:40px;width:48px;height:48px;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s;font-size:18px}
-.wi:hover .wi-arrow{opacity:1}
-/* VIDEO */
-.vbox{position:relative;background:#111;overflow:hidden;border:1px solid #1e1e1e}
-.vbox iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
-.vbox video{width:100%;aspect-ratio:16/9;display:block;background:#000}
-.vph{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#0d0d0d;border:1px dashed #252525;cursor:pointer;transition:all .3s;position:relative;padding:20px}
-.vph:hover{border-color:var(--red)}
-.vph input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.vpi{font-size:32px;opacity:.25}
-.vpl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--lg)}
-.vps{font-size:11px;color:var(--grey)}
-.vurl{display:flex;gap:0;margin-top:2px}
-.vurl input{flex:1;background:#0d0d0d;border:1px solid #252525;border-right:none;color:var(--white);padding:10px 14px;font-size:12px;font-family:'DM Sans',sans-serif;outline:none}
-.vurl input::placeholder{color:#444}
-.vurl input:focus{border-color:var(--red)}
-.vurl button{background:var(--red);color:var(--white);border:none;padding:10px 18px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .3s;white-space:nowrap}
-.vurl button:hover{background:#b82e18}
-/* UCL VIDEO */
-.ucl-sec{background:#0d0d0d;padding:120px 60px}
-.vfeat{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px}
-.vfeat:last-child{margin-bottom:0}
-.vfeat.rev{direction:rtl}
-.vfeat.rev>*{direction:ltr}
-.vinfo{display:flex;flex-direction:column;gap:20px}
-.vinfo-tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--red)}
-.vinfo-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,3vw,44px);line-height:1.1;color:var(--white)}
-.vinfo-title em{font-style:italic;color:var(--gold)}
-.vinfo-desc{font-size:15px;line-height:1.7;color:var(--lg)}
-.vstats{display:flex;gap:32px;padding-top:20px;border-top:1px solid #1e1e1e;flex-wrap:wrap}
-.vsn{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--white);line-height:1}
-.vsl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--lg);margin-top:4px}
-/* LEGENDS */
-.leg-sec{background:#0a0a0a;padding:120px 60px}
-.leg-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
-.leg-card{background:#111}
-.leg-head{padding:28px 28px 16px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center}
-.badge{font-size:9px;letter-spacing:.25em;text-transform:uppercase;background:var(--red);color:var(--white);padding:5px 12px;display:inline-block}
-.badge.up{background:transparent;border:1px solid var(--gold);color:var(--gold)}
-.leg-title{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.03em;color:var(--white);line-height:1;padding:20px 28px 6px}
-.leg-sub{font-size:13px;color:var(--lg);padding:0 28px 20px;line-height:1.6}
-.leg-video{padding:0 28px 28px}
-/* PHOTO VIDEO */
-.pv-sec{background:var(--cream);padding:120px 60px}
-.pv-sec .stitle{color:var(--black)}
-.pv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.pvc{background:var(--black);overflow:hidden}
-.pvc .vph{background:#0d0d0d;border-color:#252525}
-.pv-info{padding:18px 20px 20px}
-.pv-series{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.pv-title{font-family:'DM Serif Display',serif;font-size:20px;color:var(--white);margin-bottom:6px}
-.pv-desc{font-size:12px;line-height:1.6;color:var(--lg)}
-/* ABOUT */
-.about-sec{background:var(--cream);padding:120px 60px}
-.ag{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.at p{font-size:17px;line-height:1.8;color:#333;margin-bottom:20px}
-.at p strong{color:var(--black);font-weight:500}
-.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
-.sk{padding:8px 18px;border:1px solid #ccc;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);transition:all .3s}
-.sk:hover{background:var(--black);color:var(--white);border-color:var(--black)}
-.ar{display:flex;flex-direction:column;gap:32px}
-.asr{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:24px;border-bottom:1px solid #ddd}
-.asr:last-child{border-bottom:none}
-.asn{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--black);line-height:1}
-.asd{font-size:13px;color:var(--grey);max-width:200px;text-align:right;line-height:1.5}
-.lang-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
-.li{background:#111;padding:40px 24px;text-align:center;transition:background .3s}
-.li:hover{background:var(--red)}
-.lf{font-size:36px;margin-bottom:16px}
-.ln{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.1em;color:var(--white);margin-bottom:8px}
-.ll{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--lg)}
-.li:hover .ll{color:rgba(255,255,255,.7)}
-.contact-sec{background:var(--red);text-align:center;padding:120px 60px}
-.ct{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,140px);color:var(--white);line-height:.9;margin-bottom:48px;letter-spacing:.02em}
-.cl-wrap{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
-.cl{color:var(--white);text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:4px;transition:border-color .3s}
-.cl:hover{border-color:var(--white)}
-footer{background:var(--black);padding:40px 60px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #1a1a1a}
-footer span{font-size:11px;letter-spacing:.15em;color:var(--grey)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+:root{
+  --bg:#080b12; --bg2:#0e1422; --panel:#101729; --panel2:#0c1220;
+  --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+  --text:#eef1f7; --muted:#93a0b8; --dim:#5d6b85;
+  --blue:#4f7cff; --violet:#8c5cff; --green:#34d399; --amber:#f5b94f;
+  --grad:linear-gradient(135deg,var(--blue),var(--violet));
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:400;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:-.01em}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:18px}
+.eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--grad)}
+.h2{font-size:clamp(28px,4vw,44px);line-height:1.15;margin-bottom:18px}
+.h2 .accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:17px;color:var(--muted);max-width:560px;line-height:1.7}
+section{padding:96px 0;position:relative}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;font-weight:600;font-size:14px;letter-spacing:.01em;text-decoration:none;cursor:pointer;border:none;border-radius:10px;transition:all .25s ease;white-space:nowrap}
+.btn-primary{background:var(--grad);color:#fff;padding:15px 26px;box-shadow:0 8px 24px -8px rgba(79,124,255,.55)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(79,124,255,.7)}
+.btn-ghost{background:transparent;color:var(--text);padding:15px 24px;border:1px solid var(--line2)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+.btn-sm{padding:11px 20px;font-size:13px}
+
+/* NAV */
+header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(8,11,18,.75);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:32px;height:32px;border-radius:8px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:#fff}
+.logo-text{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-size:14px;color:var(--muted);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{display:flex;align-items:center}
+.burger{display:none;width:28px;height:20px;flex-direction:column;justify-content:space-between;cursor:pointer;background:none;border:none}
+.burger span{display:block;height:2px;background:var(--text);border-radius:2px}
+
+/* HERO */
+.hero{padding:200px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(79,124,255,.25),transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;top:100px;left:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(140,92,255,.18),transparent 65%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(38px,5.4vw,62px);line-height:1.08;margin-bottom:24px}
+.hero h1 .accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lede{font-size:18px;margin-bottom:36px}
+.hero-ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:40px}
+.hero-note{font-size:12.5px;color:var(--dim)}
+.hero-proof{display:flex;gap:28px;flex-wrap:wrap}
+.hp{display:flex;flex-direction:column;gap:2px}
+.hp b{font-family:'Sora',sans-serif;font-size:24px;color:var(--text)}
+.hp span{font-size:11.5px;color:var(--dim);letter-spacing:.04em;text-transform:uppercase}
+
+/* hero visual card */
+.hero-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.hc-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.hc-row:last-child{border-bottom:none}
+.hc-label{font-size:13px;color:var(--muted)}
+.hc-val{font-family:'Sora',sans-serif;font-weight:700;font-size:15px}
+.hc-val.up{color:var(--green)}
+.hc-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.hc-tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.hc-pill{font-size:11px;background:rgba(52,211,153,.12);color:var(--green);padding:4px 10px;border-radius:20px;font-weight:600}
+.bars{display:flex;align-items:flex-end;gap:8px;height:64px;margin-top:18px}
+.bar{flex:1;background:linear-gradient(180deg,rgba(79,124,255,.9),rgba(140,92,255,.35));border-radius:4px 4px 0 0}
+
+/* trust strip */
+.trust{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0;overflow:hidden}
+.trust-inner{display:flex;align-items:center;gap:14px}
+.trust-label{font-size:11.5px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+.marq{overflow:hidden;flex:1;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marq-track{display:flex;gap:56px;white-space:nowrap;animation:marquee 26s linear infinite;align-items:center}
+.marq-item{font-family:'Sora',sans-serif;font-size:15px;color:var(--dim);letter-spacing:.04em;font-weight:600}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes spulse{0%,100%{opacity:.4}50%{opacity:1}}
-.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.25,.46,.45,.94)}
+
+/* problem */
+.problem{padding:100px 0;background:var(--bg)}
+.prow{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.pain-list{display:flex;flex-direction:column;gap:18px}
+.pain{display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.pain-ic{font-size:18px;flex-shrink:0;margin-top:1px}
+.pain b{display:block;font-family:'Sora',sans-serif;font-size:14.5px;margin-bottom:3px}
+.pain span{font-size:13.5px;color:var(--muted);line-height:1.55}
+
+/* services */
+.services{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:52px;flex-wrap:wrap}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px;transition:all .3s}
+.svc-card:hover{border-color:var(--line2);transform:translateY(-4px)}
+.svc-num{font-family:'Sora',sans-serif;font-size:12px;color:var(--dim);letter-spacing:.1em;margin-bottom:18px}
+.svc-ic{width:44px;height:44px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:20px}
+.svc-card h3{font-size:18px;margin-bottom:10px}
+.svc-card p{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+/* process */
+.process{padding:110px 0}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:50px}
+.proc-grid::before{content:'';position:absolute;top:26px;left:0;right:0;height:1px;background:var(--line);z-index:0}
+.proc{position:relative;z-index:1;padding:0 18px}
+.proc-num{width:52px;height:52px;border-radius:50%;background:var(--bg);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;color:var(--blue);margin-bottom:22px}
+.proc:nth-child(1) .proc-num{border-color:var(--blue);color:var(--blue)}
+.proc h4{font-size:16px;margin-bottom:8px}
+.proc p{font-size:13.5px;color:var(--muted);line-height:1.6}
+
+/* results */
+.results{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:90px 0}
+.res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.res{background:var(--panel);padding:40px 28px;text-align:center}
+.res b{display:block;font-family:'Sora',sans-serif;font-size:38px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+.res span{font-size:12.5px;color:var(--muted);letter-spacing:.03em}
+
+/* testimonials */
+.testi{padding:110px 0}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:20px}
+.stars{color:var(--amber);font-size:14px;letter-spacing:2px}
+.tcard p{font-size:14.5px;line-height:1.7;color:#dbe1ec;flex:1}
+.tauthor{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+.tav{width:38px;height:38px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#fff}
+.tauthor b{display:block;font-size:13.5px}
+.tauthor span{display:block;font-size:11.5px;color:var(--dim)}
+
+/* pricing */
+.pricing{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:110px 0}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+.pcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 30px;position:relative}
+.pcard.featured{border-color:var(--blue);background:linear-gradient(180deg,rgba(79,124,255,.08),rgba(140,92,255,.04));transform:scale(1.03);box-shadow:0 30px 60px -30px rgba(79,124,255,.4)}
+.pbadge{position:absolute;top:-13px;left:30px;background:var(--grad);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:20px}
+.ptier{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.pcard h3{font-size:22px;margin-bottom:10px}
+.pcard .pfor{font-size:13.5px;color:var(--muted);margin-bottom:26px;line-height:1.6;min-height:42px}
+.pfeat{display:flex;flex-direction:column;gap:13px;margin-bottom:30px}
+.pfeat li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#dbe1ec;list-style:none}
+.pfeat li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.pcard .btn{width:100%;justify-content:center}
+
+/* faq */
+.faq{padding:110px 0;max-width:760px;margin:0 auto;padding-left:32px;padding-right:32px}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;font-family:'Sora',sans-serif;font-weight:600;font-size:15.5px}
+.faq-q .plus{font-size:20px;color:var(--blue);transition:transform .3s;flex-shrink:0;margin-left:20px}
+.faq-item.open .plus{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{font-size:14.5px;color:var(--muted);line-height:1.7;padding-bottom:24px;max-width:640px}
+
+/* final cta */
+.cta-final{padding:120px 0;text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(79,124,255,.18),transparent 60%);pointer-events:none}
+.cta-final h2{font-size:clamp(32px,5vw,52px);max-width:680px;margin:0 auto 20px;position:relative;z-index:1}
+.cta-final .lede{margin:0 auto 40px;text-align:center;position:relative;z-index:1}
+.cta-final .hero-ctas{justify-content:center;position:relative;z-index:1}
+
+/* contact form */
+.contact{background:var(--bg2);border-top:1px solid var(--line);padding:100px 0}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.cinfo-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px}
+.cinfo-ic{width:38px;height:38px;border-radius:10px;background:var(--panel);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.cinfo b{display:block;font-size:14px;margin-bottom:2px}
+.cinfo span,.cinfo a{font-size:13.5px;color:var(--muted);text-decoration:none}
+form{display:flex;flex-direction:column;gap:16px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:12.5px;color:var(--muted);margin-bottom:6px;display:block;font-weight:500}
+input,select,textarea{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--blue)}
+textarea{resize:vertical;min-height:90px}
+.form-note{font-size:12px;color:var(--dim);text-align:center}
+
+/* sticky cta bar */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:150;background:rgba(14,20,34,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line2);padding:14px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;transform:translateY(110%);transition:transform .4s ease}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-text{font-family:'Sora',sans-serif;font-weight:600;font-size:14px}
+.sticky-text span{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+.sticky-close{background:none;border:none;color:var(--dim);font-size:18px;cursor:pointer;padding:4px}
+
+footer{background:var(--bg);padding:50px 0 30px;border-top:1px solid var(--line)}
+.foot-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:30px;margin-bottom:30px}
+.foot-cols{display:flex;gap:60px;flex-wrap:wrap}
+.foot-col h5{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:16px}
+.foot-col a{display:block;font-size:13.5px;color:var(--muted);text-decoration:none;margin-bottom:10px}
+.foot-col a:hover{color:var(--text)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--line);font-size:12.5px;color:var(--dim);flex-wrap:wrap;gap:10px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
-@media(max-width:900px){
-nav{padding:24px}
-.nav-links{gap:14px}
-.nav-links a{font-size:10px}
-.hero{grid-template-columns:1fr}
-.hero-right{display:none}
-.hero-left{padding:120px 24px 80px}
-.ucl-sec,.leg-sec,.pv-sec,.about-sec{padding:80px 24px}
-.vfeat,.ag{grid-template-columns:1fr;gap:40px}
-.vfeat.rev{direction:ltr}
-.leg-grid,.pv-grid{grid-template-columns:1fr}
-.work-grid{grid-template-columns:1fr}
-.wi:first-child{grid-column:span 1}
-.lang-grid{grid-template-columns:repeat(3,1fr)}
-footer{flex-direction:column;gap:16px;text-align:center}
-.cl-wrap{flex-direction:column;align-items:center}}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+@media(max-width:980px){
+  .hero-grid,.prow,.cgrid{grid-template-columns:1fr;gap:40px}
+  .svc-grid,.res-grid,.testi-grid,.price-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-grid{grid-template-columns:repeat(2,1fr);row-gap:40px}
+  .proc-grid::before{display:none}
+  .pcard.featured{transform:none}
+  .frow{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .wrap{padding:0 20px}
+  .hero{padding:140px 0 60px}
+  section{padding:70px 0}
+  .svc-grid,.res-grid,.testi-grid,.price-grid{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr}
+  .hero-proof{gap:20px}
+  .svc-head{align-items:flex-start}
+  .sticky-cta{padding:12px 18px}
+  .sticky-text{font-size:12.5px}
+  .foot-cols{gap:30px}
+}
 </style>
 </head>
 <body>
-<div class="cursor" id="cur"></div>
-<div class="cring" id="crng"></div>
 
-<nav>
-  <a href="#" class="nav-logo">SH</a>
-  <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#ucl">UCL Campaign</a></li>
-    <li><a href="#legends">Legends</a></li>
-    <li><a href="#photography">Photography</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<header>
+  <nav>
+    <a href="#home" class="logo">
+      <div class="logo-mark">RLA</div>
+      <div class="logo-text">RLA Digital</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary btn-sm">Book a Strategy Call</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
 
 <section class="hero" id="home">
-  <div class="hero-left">
-    <p class="hero-tag">Brand Marketing · Cross-Cultural Strategy</p>
-    <h1 class="hero-name">Sabion<br><span>Hajdinaj</span></h1>
-    <p class="hero-desc">MSc International Marketing, King's College London. Specialist in multi-market campaign management, KOL strategy, and cross-cultural brand storytelling across Europe and Asia.</p>
-    <div class="hero-cta">
-      <a href="#work" class="btn-p">View Work</a>
-      <a href="#contact" class="btn-s">Get in touch</a>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow reveal">B2B Growth Marketing · Since 2022</p>
+      <h1 class="reveal d1">Turn ad spend into <span class="accent">booked sales calls</span>, not just clicks.</h1>
+      <p class="lede reveal d2">RLA Digital plans, runs and books your pipeline end-to-end — paid advertising, appointment setting, follow-up and automation — so your team spends time closing, not chasing.</p>
+      <div class="hero-ctas reveal d3">
+        <a href="#contact" class="btn btn-primary">Book a Free Strategy Call</a>
+        <a href="#process" class="btn btn-ghost">See How It Works</a>
+      </div>
+      <p class="hero-note reveal d3">No lock-in contracts · Free 30-minute pipeline audit · Replies within 1 business day</p>
+      <div class="hero-proof reveal d4">
+        <div class="hp"><b>20+</b><span>SMEs Scaled</span></div>
+        <div class="hp"><b>4.3 / 5</b><span>Trustpilot Rating</span></div>
+        <div class="hp"><b>2022</b><span>Founded</span></div>
+        <div class="hp"><b>1,000s</b><span>Sales Booked</span></div>
+      </div>
+    </div>
+    <div class="hero-card reveal d2">
+      <div class="hc-head">
+        <span class="hc-tag">Live Pipeline Snapshot</span>
+        <span class="hc-pill">▲ On Target</span>
+      </div>
+      <div class="hc-row"><span class="hc-label">Qualified Calls Booked</span><span class="hc-val up">+38%</span></div>
+      <div class="hc-row"><span class="hc-label">Cost per Booked Call</span><span class="hc-val up">−24%</span></div>
+      <div class="hc-row"><span class="hc-label">Show-up Rate</span><span class="hc-val">82%</span></div>
+      <div class="hc-row"><span class="hc-label">Pipeline Influenced</span><span class="hc-val up">£186K</span></div>
+      <div class="bars">
+        <div class="bar" style="height:35%"></div><div class="bar" style="height:50%"></div><div class="bar" style="height:42%"></div><div class="bar" style="height:64%"></div><div class="bar" style="height:58%"></div><div class="bar" style="height:78%"></div><div class="bar" style="height:90%"></div>
+      </div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hbg">SH</div>
-    <div class="hline"></div>
-    <div class="hero-stats">
-      <div class="stat"><div class="snum">21.9M+</div><div class="slbl">Campaign Impressions</div></div>
-      <div class="stat"><div class="snum">117</div><div class="slbl">KOL Activations</div></div>
-      <div class="stat"><div class="snum">12</div><div class="slbl">European Markets</div></div>
-      <div class="stat"><div class="snum">5</div><div class="slbl">Languages</div></div>
-    </div>
-  </div>
-  <div class="scroll-ind"><span>Scroll</span><div class="sline"></div></div>
 </section>
 
-<div class="mq">
-  <div class="mq-track">
-    <div class="mq-item">UEFA Champions League</div><div class="mq-item">JoyBuy · JD.com</div><div class="mq-item">Fortune Global 500</div><div class="mq-item">KCL Distinction</div><div class="mq-item">126 Fixtures</div><div class="mq-item">Budapest Final</div><div class="mq-item">Cross-Cultural Strategy</div>
-    <div class="mq-item">UEFA Champions League</div><div class="mq-item">JoyBuy · JD.com</div><div class="mq-item">Fortune Global 500</div><div class="mq-item">KCL Distinction</div><div class="mq-item">126 Fixtures</div><div class="mq-item">Budapest Final</div><div class="mq-item">Cross-Cultural Strategy</div>
+<div class="trust">
+  <div class="wrap trust-inner">
+    <span class="trust-label">Channels we run</span>
+    <div class="marq">
+      <div class="marq-track">
+        <span class="marq-item">Google Ads</span><span class="marq-item">Meta Ads</span><span class="marq-item">LinkedIn Ads</span><span class="marq-item">Email & SMS</span><span class="marq-item">Outbound Calling</span><span class="marq-item">CRM Automation</span><span class="marq-item">Trustpilot 4.3★</span>
+        <span class="marq-item">Google Ads</span><span class="marq-item">Meta Ads</span><span class="marq-item">LinkedIn Ads</span><span class="marq-item">Email & SMS</span><span class="marq-item">Outbound Calling</span><span class="marq-item">CRM Automation</span><span class="marq-item">Trustpilot 4.3★</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<section id="work" style="padding:120px 0;background:#0a0a0a">
-  <div style="padding:0 60px 60px">
-    <p class="slabel reveal">Selected Work</p>
-    <h2 class="stitle reveal d1">Campaigns that <em>move</em><br>markets.</h2>
-  </div>
-  <div class="work-grid">
-    <div class="wi reveal" style="background:radial-gradient(ellipse at 30% 50%,rgba(212,53,28,.3) 0%,transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(201,168,76,.2) 0%,transparent 50%),#111">
-      <div class="wi-content"><div class="wi-tag">Brand Marketing · 2024–2025</div><div class="wi-title">UEFA Champions League — JoyBuy Campaign</div><div class="wi-meta">21.9M+ impressions · 4 markets · MD1 to Budapest Final · Fortune Global 500</div></div>
-      <div class="wi-arrow">↗</div>
-    </div>
-    <div class="wi reveal d1" style="background:radial-gradient(ellipse at 20% 80%,rgba(212,53,28,.2) 0%,transparent 50%),#111">
-      <div class="wi-content"><div class="wi-tag">Influencer Strategy · 2024–2025</div><div class="wi-title">KOL Activation — 12 Markets</div><div class="wi-meta">117 activations · 7M organic impressions · Zero media spend</div></div>
-      <div class="wi-arrow">↗</div>
-    </div>
-    <div class="wi reveal d2" style="background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,.2) 0%,transparent 60%),#0d0d0d">
-      <div class="wi-content"><div class="wi-tag">Legend Activation · 2025</div><div class="wi-title">Ray Parlour × 433 Instagram</div><div class="wi-meta">Live UCL Quarterfinals takeover · Scripting, coordination & approvals</div></div>
-      <div class="wi-arrow">↗</div>
-    </div>
-    <div class="wi reveal d1" style="background:radial-gradient(ellipse at 80% 20%,rgba(201,168,76,.15) 0%,transparent 50%),#0d0d0d">
-      <div class="wi-content"><div class="wi-tag">Consumer Research · 2024</div><div class="wi-title">KYL Foundation — Market Expansion</div><div class="wi-meta">198 participants · JASP analysis · International growth strategy</div></div>
-      <div class="wi-arrow">↗</div>
-    </div>
-  </div>
-</section>
-
-<!-- UCL CAMPAIGN VIDEO -->
-<section id="ucl" class="ucl-sec">
-  <p class="slabel reveal">UCL Campaign Footage</p>
-  <h2 class="stitle reveal d1">The campaign.<br><em>In full.</em></h2>
-
-  <div class="vfeat reveal">
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="wrap prow">
     <div>
-      <div class="vbox" id="b1">
-        <div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b1')"><div class="vpi">▶</div><div class="vpl">Campaign footage</div><div class="vps">Click to upload a video file</div></div>
-      </div>
-      <div class="vurl"><input type="text" placeholder="Paste YouTube or Vimeo URL..." id="u1"><button onclick="eu('u1','b1')">Embed ↗</button></div>
+      <p class="eyebrow reveal">The Problem</p>
+      <h2 class="h2 reveal d1">Most B2B pipelines run on <span class="accent">luck</span>, not a system.</h2>
+      <p class="lede reveal d2">Referrals dry up. Ad spend leaks on the wrong audience. Leads come in and nobody follows up fast enough to book the call. We fix the whole chain, not just one link.</p>
     </div>
-    <div class="vinfo">
-      <div class="vinfo-tag">UCL Campaign · JoyBuy × UEFA</div>
-      <h3 class="vinfo-title">Matchday 1 to the <em>Budapest Final</em></h3>
-      <p class="vinfo-desc">Sole marketing hire managing JoyBuy's UEFA Champions League sponsorship end-to-end — from campaign launch through to the Final across UK, France, Germany and the Netherlands.</p>
-      <div class="vstats">
-        <div><div class="vsn">21.9M+</div><div class="vsl">Total Impressions</div></div>
-        <div><div class="vsn">126</div><div class="vsl">Fixtures</div></div>
-        <div><div class="vsn">£1M+</div><div class="vsl">Tickets Managed</div></div>
+    <div class="pain-list">
+      <div class="pain reveal"><span class="pain-ic">⚠️</span><div><b>Leads go cold</b><span>Inbound interest arrives but no one calls within the window that matters — most leads need contact inside 5 minutes to convert.</span></div></div>
+      <div class="pain reveal d1"><span class="pain-ic">📉</span><div><b>Ad spend without attribution</b><span>Campaigns run on vanity metrics — clicks and impressions — with no visibility into cost per booked, qualified sales call.</span></div></div>
+      <div class="pain reveal d2"><span class="pain-ic">🧩</span><div><b>Too many disconnected vendors</b><span>An ads freelancer, a VA, a script writer — none of them talking to each other or accountable for revenue.</span></div></div>
+      <div class="pain reveal d3"><span class="pain-ic">🗓️</span><div><b>No-shows kill ROI</b><span>Calls get booked but never confirmed or chased, so a large share of paid pipeline simply evaporates before it reaches your calendar.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="svc-head">
+      <div>
+        <p class="eyebrow reveal">What We Do</p>
+        <h2 class="h2 reveal d1">One team, the <span class="accent">full funnel</span>.</h2>
+      </div>
+      <p class="lede reveal d2">Every service below is built to feed the same number: qualified sales calls on your calendar.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal"><div class="svc-num">01</div><div class="svc-ic">📊</div><h3>Paid Advertising</h3><p>Google, Meta and LinkedIn campaigns built and optimised for cost-per-qualified-lead, not clicks.</p></div>
+      <div class="svc-card reveal d1"><div class="svc-num">02</div><div class="svc-ic">📞</div><h3>Appointment Setting & Phone Sales</h3><p>Outbound calling and diary management that turns interest into booked, confirmed sales calls.</p></div>
+      <div class="svc-card reveal d2"><div class="svc-num">03</div><div class="svc-ic">✉️</div><h3>Email & SMS Campaigns</h3><p>Nurture and follow-up sequences that recover the leads who don't convert the first time.</p></div>
+      <div class="svc-card reveal d3"><div class="svc-num">04</div><div class="svc-ic">⚙️</div><h3>AI Automation & CRM</h3><p>Workflow and CRM automation that removes manual admin and stops leads slipping through gaps.</p></div>
+      <div class="svc-card reveal d4"><div class="svc-num">05</div><div class="svc-ic">🎥</div><h3>Content & Social Management</h3><p>Always-on content and social presence that builds trust with prospects before the call.</p></div>
+      <div class="svc-card reveal d4"><div class="svc-num">06</div><div class="svc-ic">🎯</div><h3>Sales Scripts & Coaching</h3><p>Scripts, training and process design so your team converts more of the calls we generate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="wrap">
+    <p class="eyebrow reveal">How It Works</p>
+    <h2 class="h2 reveal d1">From audit to booked calls in <span class="accent">four steps</span>.</h2>
+    <div class="proc-grid">
+      <div class="proc reveal"><div class="proc-num">01</div><h4>Audit</h4><p>We map your current funnel, offer, sales cycle and numbers in a free 30-minute call.</p></div>
+      <div class="proc reveal d1"><div class="proc-num">02</div><h4>Strategy</h4><p>You get a channel plan and 90-day roadmap matched to how your buyers actually decide.</p></div>
+      <div class="proc reveal d2"><div class="proc-num">03</div><h4>Launch</h4><p>Campaigns, outbound and automation go live, managed end-to-end by a dedicated team.</p></div>
+      <div class="proc reveal d3"><div class="proc-num">04</div><h4>Scale</h4><p>We double down on what's converting and report on booked calls and revenue — not vanity metrics.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="wrap">
+    <p class="eyebrow reveal">Track Record</p>
+    <h2 class="h2 reveal d1">Numbers that <span class="accent">matter to a CFO</span>.</h2>
+    <div class="res-grid" style="margin-top:40px">
+      <div class="res reveal"><b>20+</b><span>SMEs scaled since launch</span></div>
+      <div class="res reveal d1"><b>4.3/5</b><span>Average Trustpilot rating</span></div>
+      <div class="res reveal d2"><b>1,000s</b><span>Sales generated for clients</span></div>
+      <div class="res reveal d3"><b>2022</b><span>Operating since</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi" id="testimonials">
+  <div class="wrap">
+    <p class="eyebrow reveal">Client Feedback</p>
+    <h2 class="h2 reveal d1">What clients say <span class="accent">on the record</span>.</h2>
+    <p class="lede reveal d2" style="margin-bottom:50px">Paraphrased from verified Trustpilot reviews — full reviews are public on our Trustpilot profile.</p>
+    <div class="testi-grid">
+      <div class="tcard reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Invaluable to our growth — the right marketing for our client group, appointments booked, prospects chased properly. Our investment paid for itself many times over."</p>
+        <div class="tauthor"><div class="tav">SM</div><div><b>SME Owner</b><span>Verified Trustpilot Review</span></div></div>
+      </div>
+      <div class="tcard reveal d1">
+        <div class="stars">★★★★★</div>
+        <p>"Organised, well communicated and an expert across every part of social media. Easy to work with and genuinely helpful at every stage."</p>
+        <div class="tauthor"><div class="tav">CL</div><div><b>Client</b><span>Verified Trustpilot Review</span></div></div>
+      </div>
+      <div class="tcard reveal d2">
+        <div class="stars">★★★★★</div>
+        <p>"We've chosen to partner with RLA Digital over competitors year after year — they consistently deliver outstanding results and play a real role in our growth."</p>
+        <div class="tauthor"><div class="tav">LT</div><div><b>Long-term Client</b><span>Verified Trustpilot Review</span></div></div>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="vfeat rev reveal">
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <p class="eyebrow reveal">Engagement Plans</p>
+    <h2 class="h2 reveal d1">Pick a starting point. <span class="accent">Scale from there.</span></h2>
+    <p class="lede reveal d2" style="margin-bottom:50px">Every plan starts with a free audit. Final scope is quoted to your sales cycle and ad budget — no generic packages.</p>
+    <div class="price-grid">
+      <div class="pcard reveal">
+        <div class="ptier">Starter</div>
+        <h3>Validate a Channel</h3>
+        <p class="pfor">For businesses testing their first paid channel before committing further budget.</p>
+        <ul class="pfeat">
+          <li>1 ad platform managed</li>
+          <li>Monthly reporting call</li>
+          <li>Email & SMS follow-up setup</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Get a Custom Quote</a>
+      </div>
+      <div class="pcard featured reveal d1">
+        <span class="pbadge">Most Popular</span>
+        <div class="ptier">Growth</div>
+        <h3>Scale the Pipeline</h3>
+        <p class="pfor">For SMEs ready to combine paid media with appointment setting for a full funnel.</p>
+        <ul class="pfeat">
+          <li>Up to 3 ad platforms managed</li>
+          <li>Appointment setting & diary management</li>
+          <li>Fortnightly strategy calls</li>
+          <li>Dedicated account manager</li>
+          <li>CRM automation included</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Get a Custom Quote</a>
+      </div>
+      <div class="pcard reveal d2">
+        <div class="ptier">Scale</div>
+        <h3>Full-Funnel Team</h3>
+        <p class="pfor">For established B2B teams that need an outbound sales engine, not just ads.</p>
+        <ul class="pfeat">
+          <li>Full-funnel campaign management</li>
+          <li>Outbound calling team</li>
+          <li>Custom automation & CRM build</li>
+          <li>Weekly reporting</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Get a Custom Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <p class="eyebrow reveal">FAQ</p>
+  <h2 class="h2 reveal d1">Questions before you <span class="accent">book the call</span>.</h2>
+  <div style="margin-top:30px">
+    <div class="faq-item open">
+      <div class="faq-q"><span>How quickly will I see results?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>Paid campaigns typically start generating qualified leads within the first 2-3 weeks; appointment setting adds booked calls on top of that as soon as outbound is live. We agree clear milestones during the audit so you know what "working" looks like before we start.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Do I need to sign a long-term contract?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>No. We don't lock clients into long contracts — we'd rather earn the right to keep working with you every month based on results.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>What size of business do you work with?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>We work primarily with SMEs and B2B service businesses that have a clear offer and sales process, and want to scale a predictable acquisition channel rather than rely on referrals alone.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Do you actually make the sales calls, or just generate leads?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>Both, depending on the plan. Our team can run outbound calling and appointment setting so qualified, confirmed calls land directly on your team's calendar — you focus on closing.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>How is reporting handled?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>You get regular reporting tied to booked calls, cost per booking and pipeline influenced — not just clicks and impressions — plus a direct line to your account manager.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>How many new clients do you take on?</span><span class="plus">+</span></div>
+      <div class="faq-a"><p>We onboard a limited number of new clients each month so every account gets a dedicated team and proper ramp-up — book a call to check current availability.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-final">
+  <div class="wrap">
+    <p class="eyebrow reveal" style="justify-content:center">Ready When You Are</p>
+    <h2 class="reveal d1">Stop guessing. Start booking <span class="accent">qualified sales calls.</span></h2>
+    <p class="lede reveal d2">Get a free 30-minute pipeline audit — no obligation, no generic pitch. We'll tell you exactly where the leaks are.</p>
+    <div class="hero-ctas reveal d3">
+      <a href="#contact" class="btn btn-primary">Book a Free Strategy Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap cgrid">
     <div>
-      <div class="vbox" id="b2">
-        <div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b2')"><div class="vpi">▶</div><div class="vpl">Offline activation footage</div><div class="vps">Arsenal · Chelsea · Tottenham · Ajax</div></div>
-      </div>
-      <div class="vurl"><input type="text" placeholder="Paste YouTube or Vimeo URL..." id="u2"><button onclick="eu('u2','b2')">Embed ↗</button></div>
-    </div>
-    <div class="vinfo">
-      <div class="vinfo-tag">Offline Activations · UK, DE, NL</div>
-      <h3 class="vinfo-title">10 activations.<br><em>539K footfall.</em></h3>
-      <p class="vinfo-desc">Coordinated 10 UEFA offline activations across UK, Germany and Netherlands — including Arsenal, Chelsea, Tottenham and Ajax — generating 8,600 sign-ups and 539K footfall exposure.</p>
-      <div class="vstats">
-        <div><div class="vsn">10</div><div class="vsl">Events</div></div>
-        <div><div class="vsn">8,600</div><div class="vsl">Sign-ups</div></div>
-        <div><div class="vsn">539K</div><div class="vsl">Footfall</div></div>
+      <p class="eyebrow reveal">Get In Touch</p>
+      <h2 class="h2 reveal d1">Tell us about your <span class="accent">pipeline</span>.</h2>
+      <p class="lede reveal d2" style="margin-bottom:36px">Fill in the form and we'll reply within 1 business day to schedule your free audit call.</p>
+      <div class="reveal d3">
+        <div class="cinfo-row"><div class="cinfo-ic">✉️</div><div class="cinfo"><b>Email</b><a href="mailto:hello@rladigital.com">hello@rladigital.com</a></div></div>
+        <div class="cinfo-row"><div class="cinfo-ic">🔗</div><div class="cinfo"><b>LinkedIn</b><a href="https://uk.linkedin.com/company/rla-digital" target="_blank">RLA Digital</a></div></div>
+        <div class="cinfo-row"><div class="cinfo-ic">📍</div><div class="cinfo"><b>Based in</b><span>United Kingdom</span></div></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- LEGEND ACTIVATIONS -->
-<section id="legends" class="leg-sec">
-  <p class="slabel reveal">Legend Activations</p>
-  <h2 class="stitle reveal d1">Football icons.<br><em>Real moments.</em></h2>
-  <div class="leg-grid">
-    <div class="leg-card reveal">
-      <div class="leg-head"><span class="badge">Completed · UCL QF 2025</span><span style="font-size:11px;color:var(--lg);letter-spacing:.1em">433 × Instagram</span></div>
-      <div class="leg-title">Ray Parlour</div>
-      <div class="leg-sub">Live Instagram takeover at the UCL Quarterfinals with Arsenal legend Ray Parlour. Scripted, coordinated and managed end-to-end — giveaway, content approvals, staff coordination.</div>
-      <div class="leg-video">
-        <div class="vbox" id="b3"><div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b3')"><div class="vpi">▶</div><div class="vpl">Add footage</div><div class="vps">Upload or embed below</div></div></div>
-        <div class="vurl"><input type="text" placeholder="YouTube / Vimeo / Instagram URL..." id="u3"><button onclick="eu('u3','b3')">Embed ↗</button></div>
+    <form id="leadForm">
+      <div class="frow">
+        <div><label>Full name</label><input type="text" name="name" required></div>
+        <div><label>Work email</label><input type="email" name="email" required></div>
       </div>
-    </div>
-    <div class="leg-card reveal d1">
-      <div class="leg-head"><span class="badge up">Coming Soon · 2025</span><span style="font-size:11px;color:var(--lg);letter-spacing:.1em">Independent Production</span></div>
-      <div class="leg-title">Nacho Monreal</div>
-      <div class="leg-sub">Independently produced activation with former Arsenal & Spain international — scripting, presenter sourcing, videographer, ticket coordination. Delivered at zero cost.</div>
-      <div class="leg-video">
-        <div class="vbox" id="b4"><div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b4')"><div class="vpi">▶</div><div class="vpl">Add footage when ready</div><div class="vps">Upload once complete</div></div></div>
-        <div class="vurl"><input type="text" placeholder="YouTube / Vimeo / Instagram URL..." id="u4"><button onclick="eu('u4','b4')">Embed ↗</button></div>
+      <div class="frow">
+        <div><label>Company</label><input type="text" name="company" required></div>
+        <div><label>Monthly ad budget</label>
+          <select name="budget">
+            <option>Under £2,000</option>
+            <option>£2,000–£5,000</option>
+            <option>£5,000–£15,000</option>
+            <option>£15,000+</option>
+          </select>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PHOTOGRAPHY + VIDEO WALKTHROUGHS -->
-<section id="photography" class="pv-sec">
-  <p class="slabel reveal">Creative Work</p>
-  <h2 class="stitle reveal d1">Photography as<br><em>cultural dialogue.</em></h2>
-  <div class="pv-grid">
-    <div class="pvc reveal">
-      <div class="vbox" id="b5"><div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b5')"><div class="vpi">🏔</div><div class="vpl">Project Liria walkthrough</div><div class="vps">Upload or embed</div></div></div>
-      <div class="vurl"><input type="text" placeholder="YouTube / Vimeo URL..." id="u5"><button onclick="eu('u5','b5')">Embed ↗</button></div>
-      <div class="pv-info"><div class="pv-series">Project Liria — 7 Parts</div><div class="pv-title">Freedom / Liri</div><div class="pv-desc">Albanian landscapes from the Accursed Mountains to the Ionian coast — challenging cultural clichés.</div></div>
-    </div>
-    <div class="pvc reveal d1">
-      <div class="vbox" id="b6"><div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b6')"><div class="vpi">🀄</div><div class="vpl">Chengyu Series walkthrough</div><div class="vps">Upload or embed</div></div></div>
-      <div class="vurl"><input type="text" placeholder="YouTube / Vimeo URL..." id="u6"><button onclick="eu('u6','b6')">Embed ↗</button></div>
-      <div class="pv-info"><div class="pv-series">Chengyu Visual Series — 6 Parts</div><div class="pv-title">語言與遺產</div><div class="pv-desc">Ancient Chinese idioms paired with contemporary Taiwanese spaces — language, heritage, visual identity.</div></div>
-    </div>
-    <div class="pvc reveal d2">
-      <div class="vbox" id="b7"><div class="vph"><input type="file" accept="video/*" onchange="lf(this,'b7')"><div class="vpi">🎬</div><div class="vpl">Behind the lens</div><div class="vps">BTS / process footage</div></div></div>
-      <div class="vurl"><input type="text" placeholder="YouTube / Vimeo URL..." id="u7"><button onclick="eu('u7','b7')">Embed ↗</button></div>
-      <div class="pv-info"><div class="pv-series">Behind The Lens</div><div class="pv-title">Process & Story</div><div class="pv-desc">The making of — cross-cultural photography as brand storytelling and cultural research.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="about-sec">
-  <p class="slabel reveal">About</p>
-  <div class="ag">
-    <div class="at reveal">
-      <h2 class="stitle" style="color:var(--black);margin-bottom:32px">Marketing at the<br><em>intersection</em> of cultures.</h2>
-      <p>I'm a brand marketer with an MSc (Distinction) from King's College London and a First Class BA in Spanish & Chinese Studies from the University of Nottingham. I speak five languages and have lived and studied across Europe, Taiwan and Spain.</p>
-      <p>Most recently I was the <strong>sole marketing hire</strong> for JoyBuy's UEFA Champions League sponsorship activation — managing the full campaign from Matchday 1 through to the Budapest Final across UK, France, Germany and the Netherlands.</p>
-      <p>My background in cross-cultural research and language gives me a different lens on brand strategy — particularly in Asian and multilingual European markets.</p>
-      <div class="skills">
-        <span class="sk">Multi-Market Campaigns</span><span class="sk">KOL Strategy</span><span class="sk">Creative Production</span><span class="sk">Consumer Research</span><span class="sk">Brand Storytelling</span><span class="sk">Stakeholder Management</span><span class="sk">Cross-Cultural Strategy</span><span class="sk">Content Creation</span>
-      </div>
-    </div>
-    <div class="ar reveal d2">
-      <div class="asr"><div class="asn">21.9M+</div><div class="asd">Total campaign impressions on the 433 platform</div></div>
-      <div class="asr"><div class="asn">£1M+</div><div class="asd">Category 1 & hospitality UEFA tickets managed solo</div></div>
-      <div class="asr"><div class="asn">126</div><div class="asd">Fixtures covered across 4 European countries</div></div>
-      <div class="asr"><div class="asn">75%</div><div class="asd">Dissertation score, KCL — Chinese Gen Z brand behaviour</div></div>
-    </div>
-  </div>
-</section>
-
-<section style="padding:80px 0;background:var(--black)">
-  <div style="padding:0 60px 60px">
-    <p class="slabel reveal">Languages</p>
-    <h2 class="stitle reveal d1">Five languages.<br><em>One voice.</em></h2>
-  </div>
-  <div class="lang-grid">
-    <div class="li reveal"><div class="lf">🇬🇧</div><div class="ln">English</div><div class="ll">Native</div></div>
-    <div class="li reveal d1"><div class="lf">🇦🇱</div><div class="ln">Albanian</div><div class="ll">Native</div></div>
-    <div class="li reveal d2"><div class="lf">🇪🇸</div><div class="ln">Spanish</div><div class="ll">Professional</div></div>
-    <div class="li reveal d3"><div class="lf">🇮🇹</div><div class="ln">Italian</div><div class="ll">Working</div></div>
-    <div class="li reveal d3"><div class="lf">🇨🇳</div><div class="ln">Mandarin</div><div class="ll">Elementary</div></div>
-  </div>
-</section>
-
-<section id="contact" class="contact-sec">
-  <p class="slabel">Get In Touch</p>
-  <h2 class="ct">Let's<br>Work.</h2>
-  <div class="cl-wrap">
-    <a href="mailto:29dinajsabion@gmail.com" class="cl">29dinajsabion@gmail.com</a>
-    <a href="https://linkedin.com/in/sabion-negocios" class="cl" target="_blank">LinkedIn</a>
-    <a href="tel:07988510547" class="cl">07988 510547</a>
+      <div><label>What do you need help with?</label><textarea name="message" placeholder="Tell us about your current pipeline and goals..."></textarea></div>
+      <button type="submit" class="btn btn-primary">Book My Free Strategy Call</button>
+      <p class="form-note">No spam. No obligation. Just a straight answer on whether we can help.</p>
+    </form>
   </div>
 </section>
 
 <footer>
-  <span>© 2025 Sabion Hajdinaj</span>
-  <span>Brand Marketing · London, UK</span>
-  <span>KCL MSc · University of Nottingham</span>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#home" class="logo"><div class="logo-mark">RLA</div><div class="logo-text">RLA Digital</div></a>
+        <p style="font-size:13px;color:var(--dim);margin-top:14px;max-width:260px">B2B growth marketing — paid ads, appointment setting and automation, managed end-to-end.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col"><h5>Company</h5><a href="#services">Services</a><a href="#process">Process</a><a href="#results">Results</a><a href="#pricing">Pricing</a></div>
+        <div class="foot-col"><h5>Connect</h5><a href="mailto:hello@rladigital.com">Email</a><a href="https://uk.linkedin.com/company/rla-digital" target="_blank">LinkedIn</a><a href="https://www.trustpilot.com/review/rladigital.com" target="_blank">Trustpilot</a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 RLA Digital Ltd</span>
+      <span>United Kingdom · Founded 2022</span>
+    </div>
+  </div>
 </footer>
 
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-text">Ready to scale your pipeline?<span>Free 30-minute audit · no obligation</span></div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <a href="#contact" class="btn btn-primary btn-sm">Book a Call</a>
+    <button class="sticky-close" id="stickyClose" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
 <script>
-const cur=document.getElementById('cur'),crng=document.getElementById('crng');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;crng.style.left=rx+'px';crng.style.top=ry+'px';requestAnimationFrame(a)})();
-document.querySelectorAll('a,button,.wi,.li').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';crng.style.borderColor='rgba(212,53,28,.8)'});
-  el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';crng.style.borderColor='rgba(212,53,28,.5)'});
-});
+// reveal on scroll
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-function lf(input,id){
-  const f=input.files[0];if(!f)return;
-  const url=URL.createObjectURL(f);
-  document.getElementById(id).innerHTML=`<video controls><source src="${url}" type="${f.type}"></video>`;
-}
-function ge(url){
-  url=url.trim();
-  const yt=url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/);
-  if(yt)return`https://www.youtube.com/embed/${yt[1]}?rel=0`;
-  const vm=url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
-  if(vm)return`https://player.vimeo.com/video/${vm[1]}`;
-  if(url.startsWith('http'))return url;
-  return null;
-}
-function eu(inputId,boxId){
-  const url=document.getElementById(inputId)?.value||'';
-  if(!url)return;
-  if(url.includes('instagram.com')){window.open(url,'_blank');return}
-  const e=ge(url);
-  if(!e){alert('Paste a YouTube or Vimeo link and try again.');return}
-  document.getElementById(boxId).innerHTML=`<iframe src="${e}" allowfullscreen allow="autoplay;encrypted-media"></iframe>`;
-}
-document.querySelectorAll('.vurl input').forEach(inp=>{
-  inp.addEventListener('keydown',e=>{if(e.key==='Enter')inp.nextElementSibling?.click()});
+
+// faq accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q=item.querySelector('.faq-q'),a=item.querySelector('.faq-a');
+  if(item.classList.contains('open')) a.style.maxHeight=a.scrollHeight+'px';
+  q.addEventListener('click',()=>{
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null});
+    if(!isOpen){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+
+// sticky cta after hero, dismissible
+const sticky=document.getElementById('stickyCta');
+let dismissed=false;
+window.addEventListener('scroll',()=>{
+  if(dismissed) return;
+  const hero=document.getElementById('home');
+  if(window.scrollY>hero.offsetHeight) sticky.classList.add('show');
+  else sticky.classList.remove('show');
+});
+document.getElementById('stickyClose').addEventListener('click',()=>{
+  dismissed=true;sticky.classList.remove('show');
+});
+
+// mobile menu toggle
+document.getElementById('burger').addEventListener('click',()=>{
+  const links=document.querySelector('.nav-links');
+  links.style.display=links.style.display==='flex'?'none':'flex';
+  links.style.position='absolute';links.style.top='64px';links.style.left='0';links.style.right='0';
+  links.style.background='rgba(8,11,18,.97)';links.style.flexDirection='column';links.style.padding='24px 32px';links.style.borderBottom='1px solid var(--line)';
+});
+
+// lead form -> mailto fallback (no backend configured)
+document.getElementById('leadForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const d=new FormData(this);
+  const body=`Name: ${d.get('name')}\nCompany: ${d.get('company')}\nEmail: ${d.get('email')}\nMonthly ad budget: ${d.get('budget')}\n\nMessage:\n${d.get('message')}`;
+  window.location.href=`mailto:hello@rladigital.com?subject=${encodeURIComponent('Strategy Call Request — '+d.get('company'))}&body=${encodeURIComponent(body)}`;
 });
 </script>
 </body>
